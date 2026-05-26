@@ -38,7 +38,7 @@ const works = [
     body:
       "Pandas + Plotly + Streamlit で売上推移・カテゴリ別分析・KPI カードを可視化。Excel/Sheets/DB から自動更新。",
     tags: ["Python", "Streamlit", "Plotly", "pandas"],
-    demo: "https://sales-dashboard-streamlit.streamlit.app/",
+    demo: "https://peacecraft-dashboard.streamlit.app/",
     accent: "from-wood-50 to-sage-50",
   },
 ];
