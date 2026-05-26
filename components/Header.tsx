@@ -27,24 +27,24 @@ export default function Header() {
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-bg/80 backdrop-blur-md border-b border-border"
+          ? "glass-warm border-b border-border"
           : "bg-transparent"
       )}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-brand-gradient glow-brand transition-transform group-hover:scale-110" />
+          <div className="w-8 h-8 rounded-lg bg-sage-gradient shadow-glow transition-transform group-hover:scale-110" />
           <span className="text-ink font-semibold tracking-tight text-lg">
             PeaceCraft
           </span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-ink-soft hover:text-ink transition-colors"
+              className="text-sm text-ink-soft hover:text-sage-600 transition-colors"
             >
               {item.label}
             </a>
@@ -53,14 +53,14 @@ export default function Header() {
 
         <a
           href="#contact"
-          className="hidden md:inline-flex items-center gap-2 bg-brand-gradient text-white text-sm font-medium px-4 py-2 rounded-lg glow-brand hover:scale-105 transition-transform"
+          className="hidden md:inline-flex items-center gap-2 bg-sage-600 hover:bg-sage-700 text-white text-sm font-medium px-4 py-2 rounded-lg shadow-glow transition-colors"
         >
           無料相談
         </a>
 
         <a
           href="#contact"
-          className="md:hidden text-sm font-medium px-3 py-1.5 rounded-md bg-brand-gradient text-white"
+          className="md:hidden text-sm font-medium px-3 py-1.5 rounded-md bg-sage-600 text-white"
         >
           相談
         </a>

@@ -1,27 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Sparkles } from "lucide-react";
+import { ArrowRight, Mail, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
     <section
       id="top"
-      className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden"
+      className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden bg-hero-bg"
     >
       {/* background grid */}
-      <div className="absolute inset-0 bg-grid-dark bg-grid-40 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_30%,#000_50%,transparent_100%)] opacity-50" />
-      {/* radial glow */}
-      <div className="absolute inset-0 bg-radial-fade" />
+      <div className="absolute inset-0 bg-grid-warm bg-grid-40 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_30%,#000_50%,transparent_100%)] opacity-70" />
+      {/* radial warm */}
+      <div className="absolute inset-0 bg-radial-warm" />
 
       <div className="relative max-w-5xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs text-ink-soft mb-8"
+          className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-warm text-xs text-sage-700 mb-8"
         >
-          <Sparkles className="w-3.5 h-3.5 text-brand-400" />
+          <Sparkles className="w-3.5 h-3.5 text-wood-500" />
           AI Native Development — Vibe Coding 時代の受託開発
         </motion.div>
 
@@ -29,7 +29,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.05 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-6"
+          className="font-display text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] mb-6 text-ink"
         >
           AIで業務を、
           <br className="hidden sm:inline" />
@@ -57,19 +57,17 @@ export default function Hero() {
         >
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 bg-brand-gradient text-white px-6 py-3 rounded-lg font-medium glow-brand hover:scale-[1.02] transition-transform"
+            className="inline-flex items-center gap-2 bg-sage-600 hover:bg-sage-700 text-white px-6 py-3 rounded-lg font-medium shadow-glow transition-colors"
           >
             無料で相談する
             <ArrowRight className="w-4 h-4" />
           </a>
           <a
-            href="https://github.com/peace-craft-dev"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 glass text-ink px-6 py-3 rounded-lg font-medium hover:bg-white/5 transition-colors"
+            href="#showcase"
+            className="inline-flex items-center gap-2 bg-white border border-border hover:border-sage-300 text-ink px-6 py-3 rounded-lg font-medium transition-colors"
           >
-            <Github className="w-4 h-4" />
-            実例コードを見る
+            <Mail className="w-4 h-4 text-wood-500" />
+            実例デモを見る
           </a>
         </motion.div>
 
@@ -86,11 +84,8 @@ export default function Hero() {
             { label: "返信速度", value: "2時間以内" },
             { label: "コードレビュー", value: "全件" },
           ].map((s) => (
-            <div
-              key={s.label}
-              className="text-center"
-            >
-              <div className="text-2xl md:text-3xl font-bold text-gradient mb-1">
+            <div key={s.label} className="text-center">
+              <div className="font-display text-2xl md:text-3xl font-semibold text-gradient mb-1">
                 {s.value}
               </div>
               <div className="text-xs text-ink-muted">{s.label}</div>

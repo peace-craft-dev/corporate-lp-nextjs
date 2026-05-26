@@ -5,78 +5,83 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
         bg: {
-          DEFAULT: "#0a0a0f",
-          soft: "#0f0f17",
-          card: "#13131c",
+          DEFAULT: "#faf7f2",
+          soft: "#f4f0e8",
+          card: "#ffffff",
+          warm: "#f7f2e8",
         },
         border: {
-          DEFAULT: "#1f1f2e",
-          strong: "#2a2a3d",
+          DEFAULT: "#e5e0d6",
+          strong: "#d6cfc0",
         },
         ink: {
-          DEFAULT: "#e8e8f0",
-          soft: "#a8a8b8",
-          muted: "#6e6e80",
+          DEFAULT: "#2c3530",
+          soft: "#6b7370",
+          muted: "#9aa19e",
         },
-        brand: {
-          50: "#eef4ff",
-          100: "#d9e5ff",
-          200: "#b8ccff",
-          300: "#8aa8ff",
-          400: "#5b7eff",
-          500: "#3b5bff",
-          600: "#2942e5",
-          700: "#1f33b8",
-          800: "#1a2a91",
-          900: "#172573",
+        sage: {
+          50: "#f0f4f1",
+          100: "#dde7e0",
+          200: "#b8cdc1",
+          300: "#92b29f",
+          400: "#6e9682",
+          500: "#5a7d6b",
+          600: "#46624f",
+          700: "#374f3f",
+          800: "#2a3c30",
+          900: "#1d2a22",
         },
-        accent: {
-          400: "#a78bfa",
-          500: "#8b5cf6",
-          600: "#7c3aed",
+        wood: {
+          50: "#faf5ec",
+          100: "#f2e7d2",
+          200: "#e6d2ad",
+          300: "#d8bb87",
+          400: "#cba66d",
+          500: "#b8946a",
+          600: "#9c7c56",
+          700: "#7e6244",
+          800: "#5f4a33",
+          900: "#3f3122",
         },
-        success: "#10b981",
+        success: "#5a7d6b",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-serif)", "Georgia", "serif"],
       },
       backgroundImage: {
-        "grid-dark":
-          "linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)",
-        "radial-fade":
-          "radial-gradient(ellipse at top, rgba(59,91,255,0.20), transparent 60%)",
-        "brand-gradient":
-          "linear-gradient(135deg, #5b7eff 0%, #8b5cf6 50%, #a78bfa 100%)",
-        "subtle-gradient":
-          "linear-gradient(180deg, rgba(91,126,255,0.05) 0%, transparent 100%)",
+        "grid-warm":
+          "linear-gradient(to right, rgba(90,125,107,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(90,125,107,0.06) 1px, transparent 1px)",
+        "radial-warm":
+          "radial-gradient(ellipse at top, rgba(90,125,107,0.10), transparent 60%)",
+        "sage-gradient":
+          "linear-gradient(135deg, #5a7d6b 0%, #b8946a 100%)",
+        "subtle-warm":
+          "linear-gradient(180deg, rgba(184,148,106,0.04) 0%, transparent 100%)",
+        "hero-bg":
+          "linear-gradient(180deg, #faf7f2 0%, #f4f0e8 100%)",
       },
       backgroundSize: {
         "grid-40": "40px 40px",
+      },
+      boxShadow: {
+        soft: "0 1px 2px rgba(44,53,48,0.04), 0 8px 24px rgba(44,53,48,0.04)",
+        card: "0 2px 4px rgba(44,53,48,0.05), 0 12px 40px rgba(44,53,48,0.06)",
+        glow: "0 0 40px -8px rgba(90,125,107,0.30)",
+        woodGlow: "0 0 40px -8px rgba(184,148,106,0.30)",
       },
       keyframes: {
         "fade-in-up": {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        glow: {
-          "0%, 100%": { opacity: "0.6" },
-          "50%": { opacity: "1" },
-        },
-        marquee: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
-        },
       },
       animation: {
         "fade-in-up": "fade-in-up 0.6s ease-out",
-        glow: "glow 3s ease-in-out infinite",
-        marquee: "marquee 30s linear infinite",
       },
     },
   },

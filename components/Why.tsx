@@ -35,10 +35,10 @@ export default function Why() {
     <section id="why" className="relative py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <div className="text-xs tracking-[0.2em] text-brand-400 uppercase mb-3">
+          <div className="text-xs tracking-[0.2em] text-wood-600 uppercase mb-3">
             Why PeaceCraft
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+          <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight mb-4 text-ink">
             なぜ <span className="text-gradient">いま</span> AI Native なのか
           </h2>
           <p className="text-ink-soft max-w-2xl mx-auto">
@@ -55,14 +55,14 @@ export default function Why() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="border-gradient p-6 md:p-8"
+              className="border-warm p-6 md:p-8"
             >
               <div className="flex items-start gap-4">
-                <div className="shrink-0 w-11 h-11 rounded-lg bg-brand-500/10 border border-brand-500/30 flex items-center justify-center">
-                  <r.icon className="w-5 h-5 text-brand-400" />
+                <div className="shrink-0 w-11 h-11 rounded-lg bg-sage-50 border border-sage-100 flex items-center justify-center">
+                  <r.icon className="w-5 h-5 text-sage-600" />
                 </div>
                 <div>
-                  <h3 className="text-lg md:text-xl font-semibold mb-2">
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 text-ink">
                     {r.title}
                   </h3>
                   <p className="text-sm md:text-base text-ink-soft leading-relaxed whitespace-pre-line">

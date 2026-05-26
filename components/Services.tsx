@@ -64,14 +64,13 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-24 md:py-32 px-6">
-      <div className="absolute inset-0 bg-subtle-gradient pointer-events-none" />
-      <div className="relative max-w-6xl mx-auto">
+    <section id="services" className="relative py-24 md:py-32 px-6 bg-bg-soft">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <div className="text-xs tracking-[0.2em] text-brand-400 uppercase mb-3">
+          <div className="text-xs tracking-[0.2em] text-wood-600 uppercase mb-3">
             Services
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+          <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight mb-4 text-ink">
             4 つのコアサービス
           </h2>
           <p className="text-ink-soft max-w-2xl mx-auto">
@@ -88,17 +87,17 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="border-gradient p-6 md:p-8 group hover:translate-y-[-2px] transition-transform"
+              className="border-warm p-6 md:p-8 group hover:translate-y-[-2px] transition-transform"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="w-12 h-12 rounded-lg bg-brand-500/10 border border-brand-500/30 flex items-center justify-center">
-                  <s.icon className="w-6 h-6 text-brand-400" />
+                <div className="w-12 h-12 rounded-lg bg-sage-50 border border-sage-100 flex items-center justify-center">
+                  <s.icon className="w-6 h-6 text-sage-600" />
                 </div>
-                <span className="text-[10px] tracking-[0.18em] uppercase text-ink-muted">
+                <span className="text-[10px] tracking-[0.18em] uppercase text-wood-600 font-medium">
                   {s.tag}
                 </span>
               </div>
-              <h3 className="text-xl md:text-2xl font-semibold mb-3">
+              <h3 className="font-display text-xl md:text-2xl font-semibold mb-3 text-ink">
                 {s.title}
               </h3>
               <p className="text-ink-soft text-sm md:text-base leading-relaxed mb-5">
@@ -110,7 +109,7 @@ export default function Services() {
                     key={b}
                     className="flex items-start gap-2 text-sm text-ink-soft"
                   >
-                    <span className="mt-1.5 w-1 h-1 rounded-full bg-brand-400 shrink-0" />
+                    <span className="mt-1.5 w-1 h-1 rounded-full bg-sage-500 shrink-0" />
                     {b}
                   </li>
                 ))}

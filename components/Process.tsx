@@ -22,7 +22,7 @@ const steps = [
     title: "高速実装",
     body:
       "AI ペアプログラミングで実装。途中 1〜2 回の中間レビューで方向ズレを早期検知。\n全コードに人間レビュー + テスト実施。",
-    detail: "所要 1〜3 週間 / GitHub で進捗共有",
+    detail: "所要 1〜3 週間 / 進捗共有",
   },
   {
     n: "04",
@@ -45,10 +45,10 @@ export default function Process() {
     <section id="process" className="relative py-24 md:py-32 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <div className="text-xs tracking-[0.2em] text-brand-400 uppercase mb-3">
+          <div className="text-xs tracking-[0.2em] text-wood-600 uppercase mb-3">
             Process
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+          <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight mb-4 text-ink">
             ご相談から納品までの <span className="text-gradient">5 ステップ</span>
           </h2>
           <p className="text-ink-soft max-w-2xl mx-auto">
@@ -57,7 +57,7 @@ export default function Process() {
         </div>
 
         <div className="relative">
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-brand-500/40 via-accent-500/30 to-transparent md:-translate-x-px" />
+          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-sage-300 via-wood-300 to-transparent md:-translate-x-px" />
 
           <div className="space-y-10">
             {steps.map((s, i) => (
@@ -69,7 +69,7 @@ export default function Process() {
                 transition={{ duration: 0.5, delay: i * 0.05 }}
                 className="relative flex md:items-center"
               >
-                <div className="absolute left-6 md:left-1/2 w-3 h-3 -translate-x-1/2 md:-translate-x-1/2 rounded-full bg-brand-gradient glow-brand z-10" />
+                <div className="absolute left-6 md:left-1/2 w-3 h-3 -translate-x-1/2 md:-translate-x-1/2 rounded-full bg-sage-gradient shadow-glow z-10" />
 
                 <div
                   className={`pl-16 md:pl-0 md:w-1/2 ${
@@ -78,10 +78,10 @@ export default function Process() {
                       : "md:pl-16 md:ml-auto md:text-left"
                   }`}
                 >
-                  <div className="text-[11px] tracking-[0.22em] text-brand-400 mb-1">
+                  <div className="text-[11px] tracking-[0.22em] text-wood-600 mb-1 font-medium">
                     STEP {s.n}
                   </div>
-                  <h3 className="text-xl md:text-2xl font-semibold mb-2">
+                  <h3 className="font-display text-xl md:text-2xl font-semibold mb-2 text-ink">
                     {s.title}
                   </h3>
                   <p className="text-ink-soft text-sm md:text-base leading-relaxed mb-2 whitespace-pre-line">

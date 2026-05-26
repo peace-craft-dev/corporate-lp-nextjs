@@ -47,10 +47,10 @@ export default function FAQ() {
     <section id="faq" className="relative py-24 md:py-32 px-6">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-16">
-          <div className="text-xs tracking-[0.2em] text-brand-400 uppercase mb-3">
+          <div className="text-xs tracking-[0.2em] text-wood-600 uppercase mb-3">
             FAQ
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+          <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight mb-4 text-ink">
             よくあるご質問
           </h2>
           <p className="text-ink-soft">
@@ -65,23 +65,23 @@ export default function FAQ() {
               <div
                 key={f.q}
                 className={cn(
-                  "rounded-xl border transition-colors overflow-hidden",
+                  "rounded-xl border bg-white transition-colors overflow-hidden",
                   isOpen
-                    ? "border-brand-500/30 bg-white/[0.02]"
-                    : "border-border bg-bg-card hover:border-border-strong"
+                    ? "border-sage-400 shadow-soft"
+                    : "border-border hover:border-sage-200"
                 )}
               >
                 <button
                   className="w-full flex items-center justify-between gap-4 p-5 text-left"
                   onClick={() => setOpenIdx(isOpen ? null : i)}
                 >
-                  <span className="text-sm md:text-base font-medium">
+                  <span className="text-sm md:text-base font-medium text-ink">
                     {f.q}
                   </span>
                   <ChevronDown
                     className={cn(
                       "w-4 h-4 shrink-0 text-ink-muted transition-transform",
-                      isOpen && "rotate-180 text-brand-400"
+                      isOpen && "rotate-180 text-sage-600"
                     )}
                   />
                 </button>

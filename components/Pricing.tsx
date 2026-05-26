@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const tiers = [
   {
@@ -52,13 +53,13 @@ const tiers = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="relative py-24 md:py-32 px-6">
+    <section id="pricing" className="relative py-24 md:py-32 px-6 bg-bg-soft">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <div className="text-xs tracking-[0.2em] text-brand-400 uppercase mb-3">
+          <div className="text-xs tracking-[0.2em] text-wood-600 uppercase mb-3">
             Pricing
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+          <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight mb-4 text-ink">
             透明な <span className="text-gradient">価格表</span>
           </h2>
           <p className="text-ink-soft max-w-2xl mx-auto">
@@ -76,24 +77,27 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className={`relative rounded-2xl p-6 md:p-8 ${
+              className={cn(
+                "relative rounded-2xl p-6 md:p-8 bg-white",
                 t.highlight
-                  ? "border-gradient glow-brand"
-                  : "border border-border bg-bg-card"
-              }`}
+                  ? "border-2 border-sage-400 shadow-glow"
+                  : "border border-border"
+              )}
             >
               {t.highlight && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="text-[10px] tracking-[0.2em] uppercase bg-brand-gradient text-white px-3 py-1 rounded-full">
+                  <span className="text-[10px] tracking-[0.2em] uppercase bg-sage-gradient text-white px-3 py-1 rounded-full">
                     Most Popular
                   </span>
                 </div>
               )}
-              <div className="text-xs tracking-[0.2em] text-ink-muted uppercase mb-1">
+              <div className="text-xs tracking-[0.2em] text-wood-600 uppercase mb-1 font-medium">
                 {t.tag}
               </div>
-              <h3 className="text-2xl font-bold mb-1">{t.name}</h3>
-              <div className="text-3xl font-bold text-gradient mb-1">
+              <h3 className="font-display text-2xl font-semibold mb-1 text-ink">
+                {t.name}
+              </h3>
+              <div className="font-display text-3xl font-semibold text-gradient mb-1">
                 {t.price}
               </div>
               <div className="text-xs text-ink-muted mb-4">
@@ -103,18 +107,19 @@ export default function Pricing() {
               <ul className="space-y-2.5 mb-8">
                 {t.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-2 text-sm">
-                    <Check className="w-4 h-4 text-brand-400 shrink-0 mt-0.5" />
+                    <Check className="w-4 h-4 text-sage-600 shrink-0 mt-0.5" />
                     <span className="text-ink-soft">{b}</span>
                   </li>
                 ))}
               </ul>
               <a
                 href="#contact"
-                className={`block text-center py-2.5 rounded-lg font-medium text-sm transition-all ${
+                className={cn(
+                  "block text-center py-2.5 rounded-lg font-medium text-sm transition-all",
                   t.highlight
-                    ? "bg-brand-gradient text-white hover:scale-[1.02]"
-                    : "border border-border-strong text-ink hover:bg-white/[0.04]"
-                }`}
+                    ? "bg-sage-600 hover:bg-sage-700 text-white"
+                    : "border border-border-strong text-ink hover:bg-bg-soft"
+                )}
               >
                 このプランで相談する
               </a>
