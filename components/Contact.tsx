@@ -7,23 +7,23 @@ const platforms = [
   {
     name: "ランサーズ",
     body: "提案を送る・直接依頼する。クラウドソーシング最大手。",
-    href: "https://www.lancers.jp/",
+    href: "https://www.lancers.jp/profile/peace-craft-dev",
     badge: "Lancers",
-    note: "プロフィール",
+    note: "PeaceCraft プロフィール",
   },
   {
     name: "ココナラ",
     body: "サービス購入形式で依頼。価格・納期が明示済み。",
-    href: "https://coconala.com/",
+    href: "https://coconala.com/users/6102491",
     badge: "coconala",
-    note: "出品者ページ",
+    note: "PeaceCraft 出品者ページ",
   },
   {
     name: "CrowdWorks",
     body: "案件相談・スカウト・直接契約。",
-    href: "https://crowdworks.jp/",
+    href: "https://crowdworks.jp/public/employees/7011266",
     badge: "CrowdWorks",
-    note: "ワーカープロフィール",
+    note: "PeaceCraft ワーカープロフィール",
   },
 ];
 
