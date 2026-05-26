@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight, Shield } from "lucide-react";
 
 const platforms = [
   {
@@ -9,18 +9,21 @@ const platforms = [
     body: "提案を送る・直接依頼する。クラウドソーシング最大手。",
     href: "https://www.lancers.jp/",
     badge: "Lancers",
+    note: "プロフィール",
   },
   {
     name: "ココナラ",
     body: "サービス購入形式で依頼。価格・納期が明示済み。",
     href: "https://coconala.com/",
     badge: "coconala",
+    note: "出品者ページ",
   },
   {
     name: "CrowdWorks",
     body: "案件相談・スカウト・直接契約。",
     href: "https://crowdworks.jp/",
     badge: "CrowdWorks",
+    note: "ワーカープロフィール",
   },
 ];
 
@@ -44,7 +47,7 @@ export default function Contact() {
           </h2>
           <p className="text-ink-soft max-w-2xl mx-auto">
             「こんな自動化はできますか？」「LINE Bot を作りたい」など、ふんわりした段階でも大丈夫です。
-            30 分のオンライン MTG または DM で、できること・概算費用をお伝えします。
+            下記いずれかのプラットフォームからご連絡ください。30 分のオンライン MTG または DM で、できること・概算費用をお伝えします。
           </p>
         </motion.div>
 
@@ -67,9 +70,12 @@ export default function Contact() {
                 </span>
                 <ArrowUpRight className="w-4 h-4 text-ink-muted group-hover:text-sage-600 transition-colors" />
               </div>
-              <h3 className="font-display text-lg font-semibold mb-2 text-ink">
+              <h3 className="font-display text-lg font-semibold mb-1 text-ink">
                 {p.name}
               </h3>
+              <div className="text-[11px] text-sage-700 font-medium mb-2">
+                → {p.note}
+              </div>
               <p className="text-sm text-ink-soft leading-relaxed">{p.body}</p>
             </motion.a>
           ))}
@@ -80,28 +86,32 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="border-warm p-6 md:p-10 text-center shadow-glow bg-white"
+          className="border-warm p-6 md:p-8 bg-sage-50 border-sage-100"
         >
-          <div className="w-12 h-12 rounded-full bg-sage-50 border border-sage-100 flex items-center justify-center mx-auto mb-4">
-            <Mail className="w-5 h-5 text-sage-600" />
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 rounded-full bg-white border border-sage-200 flex items-center justify-center shrink-0">
+              <Shield className="w-5 h-5 text-sage-600" />
+            </div>
+            <div>
+              <h3 className="font-display text-base md:text-lg font-semibold text-ink mb-2">
+                安心してご連絡いただくために
+              </h3>
+              <ul className="text-sm text-ink-soft leading-relaxed space-y-1.5">
+                <li>
+                  ✓ 全てのご相談は <strong className="text-ink">プラットフォーム経由</strong> のみで承ります（スパム・なりすまし対策）
+                </li>
+                <li>
+                  ✓ 各プラットフォームでは <strong className="text-ink">本人確認済み</strong>・<strong className="text-ink">2 段階認証有効</strong>で運用
+                </li>
+                <li>
+                  ✓ ご相談内容・お見積もりは <strong className="text-ink">無料</strong>。ヒアリングのみで終了も歓迎
+                </li>
+                <li>
+                  ✓ NDA（秘密保持契約）にも対応可能
+                </li>
+              </ul>
+            </div>
           </div>
-          <h3 className="font-display text-xl md:text-2xl font-semibold mb-2 text-ink">
-            直接メールでのご相談も歓迎
-          </h3>
-          <p className="text-sm md:text-base text-ink-soft mb-6 max-w-xl mx-auto">
-            プラットフォームを介さず、直接ご相談いただける場合は以下までお気軽にどうぞ。
-            返信は営業時間（平日 9:00 - 19:00）内に 2 時間以内。
-          </p>
-          <a
-            href="mailto:peace.craft.dev@gmail.com?subject=PeaceCraft%20%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87"
-            className="inline-flex items-center gap-2 bg-sage-600 hover:bg-sage-700 text-white px-6 py-3 rounded-lg font-medium shadow-glow transition-colors"
-          >
-            <Mail className="w-4 h-4" />
-            メールで相談する
-          </a>
-          <p className="text-xs text-ink-muted mt-4 font-mono">
-            peace.craft.dev@gmail.com
-          </p>
         </motion.div>
       </div>
     </section>
