@@ -1,8 +1,8 @@
 {
-  "name": "peacecraft-sample-lp",
-  "version": "0.1.0",
+  "name": "peacecraft-lp",
+  "version": "1.0.0",
   "private": true,
-  "description": "PeaceCraft sample: Modern corporate LP built with Next.js",
+  "description": "PeaceCraft 公式 LP — AI Native Development",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,7 +13,11 @@
   "dependencies": {
     "next": "^14.2.0",
     "react": "^18.3.0",
-    "react-dom": "^18.3.0"
+    "react-dom": "^18.3.0",
+    "framer-motion": "^11.2.0",
+    "lucide-react": "^0.395.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",

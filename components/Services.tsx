@@ -1,50 +1,137 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Bot, BarChart3, Globe, Workflow } from "lucide-react";
+
 const services = [
   {
-    title: "業務自動化",
-    description: "Excel/Sheets、Notion、API連携で日々の繰り返し作業を自動化。",
-    icon: "⚙️",
+    icon: Workflow,
+    tag: "Automation",
+    title: "業務自動化スクリプト",
+    body:
+      "Excel/Sheets/Notion/API連携、定期実行、Slack通知まで。日々の繰り返し作業を AI で構築。",
+    bullets: [
+      "Google Sheets / Notion 自動更新",
+      "CSV・帳票自動生成 + メール送信",
+      "Cron / GitHub Actions による定期実行",
+    ],
+    price: "¥50,000 〜 ¥150,000",
+    delivery: "1〜2 週間",
   },
   {
-    title: "AIチャットボット",
-    description: "LINE Bot や Webチャットで顧客対応・FAQ・予約受付を効率化。",
-    icon: "🤖",
+    icon: Bot,
+    tag: "AI Bot",
+    title: "AIチャットボット / LINE Bot",
+    body:
+      "LINE公式アカウント、Webチャット、社内Slack Bot まで。Claude API でカスタム応答を実装。",
+    bullets: [
+      "FAQ / 予約受付 / 業務サポート Bot",
+      "会話履歴・コンテキスト管理",
+      "Vercel / Cloud Run へのデプロイ込み",
+    ],
+    price: "¥80,000 〜 ¥200,000",
+    delivery: "1〜2 週間",
   },
   {
+    icon: Globe,
+    tag: "Web",
     title: "Webサイト・LP制作",
-    description: "Next.js + AI ツールで短納期・高品質な Web 制作。",
-    icon: "🌐",
+    body:
+      "Next.js + Tailwind で SEO・パフォーマンス・モバイル対応を全て満たす本格 LP。",
+    bullets: [
+      "Lighthouse 90+ の高速サイト",
+      "問い合わせフォーム / 予約連携",
+      "Vercel 無料枠での運用込み",
+    ],
+    price: "¥100,000 〜 ¥250,000",
+    delivery: "2〜3 週間",
   },
   {
+    icon: BarChart3,
+    tag: "Data",
     title: "データ分析・ダッシュボード",
-    description: "売上・KPI を Streamlit や BIツールで見える化。",
-    icon: "📊",
+    body:
+      "売上・KPI を Streamlit や BI ツールで可視化。Google Sheets / DB 連携で自動更新。",
+    bullets: [
+      "売上・在庫・顧客分析ダッシュボード",
+      "Streamlit Cloud / Looker Studio",
+      "リアルタイム更新・アラート機能",
+    ],
+    price: "¥150,000 〜 ¥300,000",
+    delivery: "2〜4 週間",
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-peace-900 mb-4 text-center">
-          サービス内容
-        </h2>
-        <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-          中小企業・個人事業主の課題に合わせて、AI を組み込んだ実用システムを提供します。
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="p-6 rounded-xl border border-gray-200 hover:border-peace-500 hover:shadow-lg transition-all"
+    <section id="services" className="relative py-24 md:py-32 px-6">
+      <div className="absolute inset-0 bg-subtle-gradient pointer-events-none" />
+      <div className="relative max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <div className="text-xs tracking-[0.2em] text-brand-400 uppercase mb-3">
+            Services
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+            4 つのコアサービス
+          </h2>
+          <p className="text-ink-soft max-w-2xl mx-auto">
+            個人事業主・中小事業者の課題に直結する 4 領域に特化。
+            それ以外もご相談に応じます。
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          {services.map((s, i) => (
+            <motion.div
+              key={s.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.5, delay: i * 0.05 }}
+              className="border-gradient p-6 md:p-8 group hover:translate-y-[-2px] transition-transform"
             >
-              <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-peace-900 mb-3">
-                {service.title}
+              <div className="flex items-start justify-between mb-4">
+                <div className="w-12 h-12 rounded-lg bg-brand-500/10 border border-brand-500/30 flex items-center justify-center">
+                  <s.icon className="w-6 h-6 text-brand-400" />
+                </div>
+                <span className="text-[10px] tracking-[0.18em] uppercase text-ink-muted">
+                  {s.tag}
+                </span>
+              </div>
+              <h3 className="text-xl md:text-2xl font-semibold mb-3">
+                {s.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {service.description}
+              <p className="text-ink-soft text-sm md:text-base leading-relaxed mb-5">
+                {s.body}
               </p>
-            </div>
+              <ul className="space-y-2 mb-6">
+                {s.bullets.map((b) => (
+                  <li
+                    key={b}
+                    className="flex items-start gap-2 text-sm text-ink-soft"
+                  >
+                    <span className="mt-1.5 w-1 h-1 rounded-full bg-brand-400 shrink-0" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <div className="flex items-center justify-between pt-4 border-t border-border">
+                <div>
+                  <div className="text-[10px] tracking-[0.18em] uppercase text-ink-muted mb-0.5">
+                    Price
+                  </div>
+                  <div className="text-sm font-semibold text-ink">{s.price}</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-[10px] tracking-[0.18em] uppercase text-ink-muted mb-0.5">
+                    Delivery
+                  </div>
+                  <div className="text-sm font-semibold text-ink">
+                    {s.delivery}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,45 +1,58 @@
+import { Github } from "lucide-react";
+
 export default function Footer() {
   return (
-    <footer className="bg-peace-900 text-white py-12 px-6">
+    <footer className="relative border-t border-border py-12 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
-            <p className="text-xl font-bold mb-2">AcmeCorp</p>
-            <p className="text-sm text-gray-300 leading-relaxed">
-              AI で業務の煩雑さに平穏を。
-              <br />
-              中小企業のDX を支援します。
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-7 h-7 rounded-lg bg-brand-gradient" />
+              <span className="font-semibold text-lg">PeaceCraft</span>
+            </div>
+            <p className="text-xs text-ink-muted max-w-md">
+              AI Native Development —
+              個人事業主・中小事業者のための受託開発。屋号: PeaceCraft（2026 年開業）。
             </p>
           </div>
-          <div>
-            <p className="font-semibold mb-3">サービス</p>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li>業務自動化</li>
-              <li>AIチャットボット</li>
-              <li>Webサイト・LP制作</li>
-              <li>データ分析</li>
-            </ul>
-          </div>
-          <div>
-            <p className="font-semibold mb-3">お問い合わせ</p>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li>info@example.com</li>
-              <li>平日 9:00 - 19:00</li>
-            </ul>
+
+          <div className="flex items-center gap-5">
+            <a
+              href="https://github.com/peace-craft-dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="text-ink-muted hover:text-ink transition-colors"
+            >
+              <Github className="w-5 h-5" />
+            </a>
+            <a
+              href="#contact"
+              className="text-sm text-ink-soft hover:text-ink transition-colors"
+            >
+              無料相談
+            </a>
+            <a
+              href="#pricing"
+              className="text-sm text-ink-soft hover:text-ink transition-colors"
+            >
+              価格
+            </a>
+            <a
+              href="#showcase"
+              className="text-sm text-ink-soft hover:text-ink transition-colors"
+            >
+              実例
+            </a>
           </div>
         </div>
-        <div className="border-t border-gray-700 pt-6 text-sm text-gray-400 text-center">
-          <p>
-            &copy; 2026 AcmeCorp (PeaceCraft サンプル作品).
-            Developed by{" "}
-            <a
-              href="#"
-              className="text-accent-500 hover:underline"
-              aria-label="PeaceCraft"
-            >
-              PeaceCraft
-            </a>{" "}
-            — AI-Native Development
+
+        <div className="mt-10 pt-6 border-t border-border flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <p className="text-xs text-ink-muted">
+            © 2026 PeaceCraft. All rights reserved.
+          </p>
+          <p className="text-xs text-ink-muted">
+            Built with Next.js 14 · Tailwind · Framer Motion · Vercel
           </p>
         </div>
       </div>

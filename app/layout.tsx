@@ -1,29 +1,63 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "AcmeCorp — 業務効率化のための AI ソリューション",
+  metadataBase: new URL("https://peacecraft.dev"),
+  title: {
+    default: "PeaceCraft — AIで業務を、人手いらずで変革する",
+    template: "%s | PeaceCraft",
+  },
   description:
-    "中小企業向けに、AI を活用した業務自動化・AIチャットボット・データ分析を提供。短納期・高品質を実現します。",
-  keywords: ["AI", "業務自動化", "DX", "中小企業", "AIチャットボット"],
+    "AI Native Development で、業務自動化・AIチャットボット・LP制作・データ分析を、従来の2〜5倍の速度と中価格帯（5〜15万円〜）で。個人事業主・中小事業者のための受託開発。",
+  keywords: [
+    "AI開発",
+    "AI Native Development",
+    "Vibe Coding",
+    "業務自動化",
+    "LINE Bot",
+    "LP制作",
+    "Next.js",
+    "Streamlit",
+    "Claude",
+    "ChatGPT",
+    "受託開発",
+    "個人事業主",
+  ],
   openGraph: {
-    title: "AcmeCorp — 業務効率化のための AI ソリューション",
+    title: "PeaceCraft — AIで業務を、人手いらずで変革する",
     description:
-      "中小企業向けに、AI を活用した業務自動化・AIチャットボット・データ分析を提供。",
+      "AI Native Development で、業務自動化・AIチャットボット・LP制作・データ分析を、従来の2〜5倍速・中価格帯で提供。",
     type: "website",
+    locale: "ja_JP",
+    siteName: "PeaceCraft",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AcmeCorp — 業務効率化のための AI ソリューション",
+    title: "PeaceCraft — AIで業務を、人手いらずで変革する",
+    description:
+      "AI Native Development で、業務自動化・AIチャットボット・LP制作・データ分析を、従来の2〜5倍速・中価格帯で提供。",
   },
+  robots: { index: true, follow: true },
 };
 
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "AcmeCorp",
-  description: "AI で業務効率化を支援する企業（PeaceCraft サンプル作品）",
-  url: "https://example.com",
+  name: "PeaceCraft",
+  alternateName: "ピースクラフト",
+  description:
+    "AI Native Development を採用した受託開発サービス。業務自動化・AIチャットボット・LP制作・データ分析を高速・高品質で提供。",
+  url: "https://peacecraft.dev",
+  sameAs: [
+    "https://github.com/peace-craft-dev",
+  ],
 };
 
 export default function RootLayout({
@@ -32,14 +66,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja">
+    <html lang="ja" className={`${inter.variable} dark`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body className="bg-bg text-ink antialiased">{children}</body>
     </html>
   );
 }

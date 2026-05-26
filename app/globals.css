@@ -3,16 +3,92 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 14, 30, 53;
-  --background-rgb: 255, 255, 255;
+  color-scheme: dark;
 }
 
 html {
   scroll-behavior: smooth;
+  background: #0a0a0f;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
-  font-family: var(--font-inter, "Inter"), system-ui, sans-serif;
+  background: #0a0a0f;
+  color: #e8e8f0;
+  font-family: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
+  font-feature-settings: "cv11", "ss01", "ss03";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(91, 126, 255, 0.35);
+  color: #ffffff;
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #5b7eff 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glow-brand {
+    box-shadow: 0 0 60px -10px rgba(91, 126, 255, 0.4);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 60px -10px rgba(139, 92, 246, 0.4);
+  }
+
+  .border-gradient {
+    position: relative;
+    background: #13131c;
+    border-radius: 12px;
+  }
+
+  .border-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: 12px;
+    background: linear-gradient(
+      135deg,
+      rgba(91, 126, 255, 0.5),
+      rgba(139, 92, 246, 0.2) 50%,
+      transparent
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .scroll-shadow {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+  }
+}
+
+/* hide scrollbar but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
